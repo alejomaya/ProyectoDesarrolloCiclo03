@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "9wjVPes2N3s01RsdrDmacQsc5PZe7PzHqu7OUk0J4QeYR5wch+dTaO1tPowdAyvOQNsAkMQxp1P6f7kxCCbktg==",
+  "success": true,
+  "projectFilePath": "C:\\Transito02\\Accievent.App\\Accievent.App.Dominio\\Accievent.App.Dominio.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kenis\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\kenis\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

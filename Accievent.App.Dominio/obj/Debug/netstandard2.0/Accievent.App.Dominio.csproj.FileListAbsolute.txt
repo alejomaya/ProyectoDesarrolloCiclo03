@@ -1,0 +1,9 @@
+C:\Transito02\Accievent.App\Accievent.App.Dominio\bin\Debug\netstandard2.0\Accievent.App.Dominio.deps.json
+C:\Transito02\Accievent.App\Accievent.App.Dominio\bin\Debug\netstandard2.0\Accievent.App.Dominio.dll
+C:\Transito02\Accievent.App\Accievent.App.Dominio\bin\Debug\netstandard2.0\Accievent.App.Dominio.pdb
+C:\Transito02\Accievent.App\Accievent.App.Dominio\obj\Debug\netstandard2.0\Accievent.App.Dominio.csprojAssemblyReference.cache
+C:\Transito02\Accievent.App\Accievent.App.Dominio\obj\Debug\netstandard2.0\Accievent.App.Dominio.AssemblyInfoInputs.cache
+C:\Transito02\Accievent.App\Accievent.App.Dominio\obj\Debug\netstandard2.0\Accievent.App.Dominio.AssemblyInfo.cs
+C:\Transito02\Accievent.App\Accievent.App.Dominio\obj\Debug\netstandard2.0\Accievent.App.Dominio.csproj.CoreCompileInputs.cache
+C:\Transito02\Accievent.App\Accievent.App.Dominio\obj\Debug\netstandard2.0\Accievent.App.Dominio.dll
+C:\Transito02\Accievent.App\Accievent.App.Dominio\obj\Debug\netstandard2.0\Accievent.App.Dominio.pdb
