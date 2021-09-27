@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Accievent.App.Persistencia\Accievent.App.Persistencia.csproj" />
+    <ProjectReference Include="..\Accievent.App.Dominio\Accievent.App.Dominio.csproj" />
   </ItemGroup>
 
 

@@ -25,6 +25,9 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
+              "C:\\Transito02\\Accievent.App\\Accievent.App.Dominio\\Accievent.App.Dominio.csproj": {
+                "projectPath": "C:\\Transito02\\Accievent.App\\Accievent.App.Dominio\\Accievent.App.Dominio.csproj"
+              },
               "C:\\Transito02\\Accievent.App\\Accievent.App.Persistencia\\Accievent.App.Persistencia.csproj": {
                 "projectPath": "C:\\Transito02\\Accievent.App\\Accievent.App.Persistencia\\Accievent.App.Persistencia.csproj"
               }

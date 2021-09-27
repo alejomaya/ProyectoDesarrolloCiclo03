@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Accievent.App.Persistencia.Migrations
 {
     [DbContext(typeof(AppContext))]
-    [Migration("20210924002430_Init08")]
-    partial class Init08
+    [Migration("20210926013031_Init13")]
+    partial class Init13
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -84,7 +84,7 @@ namespace Accievent.App.Persistencia.Migrations
                     b.ToTable("Accidentes");
                 });
 
-            modelBuilder.Entity("Accievent.App.Dominio.Persona", b =>
+            modelBuilder.Entity("Accievent.App.Dominio.AgenteDeTransito", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -94,8 +94,10 @@ namespace Accievent.App.Persistencia.Migrations
                     b.Property<string>("Apellidos")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Discriminator")
-                        .IsRequired()
+                    b.Property<string>("Cargo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CodigoAgente")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Edad")
@@ -104,7 +106,7 @@ namespace Accievent.App.Persistencia.Migrations
                     b.Property<int>("Genero")
                         .HasColumnType("int");
 
-                    b.Property<int>("IdPersona")
+                    b.Property<int>("IdAgente")
                         .HasColumnType("int");
 
                     b.Property<string>("Nombres")
@@ -124,9 +126,91 @@ namespace Accievent.App.Persistencia.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Personas");
+                    b.ToTable("Agentes");
+                });
 
-                    b.HasDiscriminator<string>("Discriminator").HasValue("Persona");
+            modelBuilder.Entity("Accievent.App.Dominio.Conductor", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("Apellidos")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CiudadResidencia")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Direccion")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Edad")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Genero")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdConductor")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Nombres")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NumeroDocumento")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NumeroPase")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NumeroTelefono")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TipoDocumento")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("correo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Conductor");
+                });
+
+            modelBuilder.Entity("Accievent.App.Dominio.Usuario", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("Apellidos")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Edad")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Genero")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Nombres")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NumeroDocumento")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NumeroTelefono")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TipoDocumento")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("correo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Usuarios");
                 });
 
             modelBuilder.Entity("Accievent.App.Dominio.Vehiculo", b =>
@@ -161,58 +245,49 @@ namespace Accievent.App.Persistencia.Migrations
 
                     b.HasIndex("ConductorId");
 
-                    b.ToTable("Vehiculos");
-                });
-
-            modelBuilder.Entity("Accievent.App.Dominio.AgenteDeTransito", b =>
-                {
-                    b.HasBaseType("Accievent.App.Dominio.Persona");
-
-                    b.Property<string>("Cargo")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CodigoAgente")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("IdAgente")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Prueba")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasDiscriminator().HasValue("AgenteDeTransito");
-                });
-
-            modelBuilder.Entity("Accievent.App.Dominio.Conductor", b =>
-                {
-                    b.HasBaseType("Accievent.App.Dominio.Persona");
-
-                    b.Property<string>("CiudadResidencia")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Direccion")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("IdConductor")
-                        .HasColumnType("int");
-
-                    b.Property<string>("NumeroPase")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasDiscriminator().HasValue("Conductor");
+                    b.ToTable("Vehiculo");
                 });
 
             modelBuilder.Entity("Accievent.App.Dominio.Victima", b =>
                 {
-                    b.HasBaseType("Accievent.App.Dominio.Persona");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("Apellidos")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Diagnostico")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("Edad")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Genero")
+                        .HasColumnType("int");
+
                     b.Property<int>("IdVictima")
                         .HasColumnType("int");
 
-                    b.HasDiscriminator().HasValue("Victima");
+                    b.Property<string>("Nombres")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NumeroDocumento")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NumeroTelefono")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TipoDocumento")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("correo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Victima");
                 });
 
             modelBuilder.Entity("Accievent.App.Dominio.Accidente", b =>
